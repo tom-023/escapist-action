@@ -1,0 +1,20 @@
+name: 'Escapist Action'
+description: 'Escape special characters in a string'
+author: 'tom-023'
+inputs:
+  string:
+    description: 'The input string to escape'
+    required: true
+  characters:
+    description: 'Special characters to escape (comma-separated)'
+    required: true
+    default: '\,",`,|,;,&,<,>,{,},[,],(,),$'
+outputs:
+  escaped:
+    description: 'The escaped string'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+branding:
+  icon: 'shield'
+  color: 'green'
