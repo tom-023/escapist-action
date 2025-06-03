@@ -1,20 +1,20 @@
 # escapist-action
 
-文字列内の特殊文字をエスケープするGitHub Actionです。
+A GitHub Action that escapes special characters in strings.
 
-## 使用方法
+## Usage
 
-### 入力
+### Inputs
 
-- `string` (必須): エスケープしたい文字列
-- `characters` (必須): エスケープする特殊文字（カンマ区切り）
-  - デフォルト: `\,",\`,|,;,&,<,>,{,},[,],(,),$`
+- `string` (required): The string to escape
+- `characters` (required): Special characters to escape (comma-separated)
+  - Default: `\,",\`,|,;,&,<,>,{,},[,],(,),$`
 
-### 出力
+### Outputs
 
-- `escaped`: エスケープされた文字列
+- `escaped`: The escaped string
 
-### 使用例
+### Basic Example
 
 ```yaml
 name: Escape Special Characters
@@ -32,22 +32,22 @@ jobs:
 
       - name: Show escaped string
         run: echo "${{ steps.escape.outputs.escaped }}"
-        # 出力: Hello \"World\" \& \<Friends\>
+        # Output: Hello \"World\" \& \<Friends\>
 ```
 
-### カスタム特殊文字の指定
+### Custom Character Set
 
-特定の文字のみをエスケープしたい場合：
+To escape only specific characters:
 
 ```yaml
 - uses: tom-023/escapist-action@v1
   with:
     string: 'Price: $100 | Quantity: 5'
     characters: '$,|'
-  # 出力: Price: \$100 \| Quantity: 5
+  # Output: Price: \$100 \| Quantity: 5
 ```
 
-### シェルスクリプトでの使用例
+### Shell Script Example
 
 ```yaml
 - uses: tom-023/escapist-action@v1
@@ -62,6 +62,6 @@ jobs:
     echo "PR Title: $SAFE_TITLE"
 ```
 
-## ライセンス
+## License
 
 MIT
