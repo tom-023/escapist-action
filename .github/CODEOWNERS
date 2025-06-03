@@ -1,0 +1,18 @@
+# This file defines code owners for the repository
+# Code owners are automatically requested for review when someone opens a pull request that modifies code that they own
+
+# Global owners for all files
+* @tom-023
+
+# Action specific files
+/action.yml @tom-023
+/src/ @tom-023
+/dist/ @tom-023
+
+# Test files
+/__tests__/ @tom-023
+
+# Configuration files
+/package.json @tom-023
+/tsconfig.json @tom-023
+/jest.config.js @tom-023
